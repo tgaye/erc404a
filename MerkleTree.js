@@ -194,13 +194,13 @@ function createTree() {
 
   // Get Root of Merkle Tree
   console.log(`Here is Root Hash: ${buf2Hex(tree.getRoot())}`);
-  createProofs(tree)
+  createProofs(tree, buf2Hex)
 }
 
 // This function loops through the whitelised addresses and creates the proof used to verify their claim
 // if you had a frontend you would allow the user to sign in then do these operation on their singular wallet.
 // FLOW: Wallet sign in -> capture wallet address -> create proof -> user creates transaction sending newly created proof as a param -> verify proof on chain.
-function createProofs(tree) {
+function createProofs(tree, buf2Hex) {
   // Pushing all the proof and leaf in data array
   address.forEach((address) => {
     const leaf = keccak256(address);
