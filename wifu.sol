@@ -31,6 +31,11 @@ contract WIFU is ERC404Metadata {
         _;
     }
 
+    function claim(bytes32[] calldata proof) public isWhiteListedAddress(proof) {
+        require(balanceOf[address(this)] >= 10, "Not enough tokens in contract");
+        _transfer(address(this), msg.sender, 10);
+    }
+
     function updateHash(bytes32 _hash) public onlyOwner {
         rootHash = _hash;
     }
