@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/tgaye/erc404a#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.1"
+    "@openzeppelin/contracts": "^5.0.1",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.11"
   }
 }
