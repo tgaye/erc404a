@@ -9,6 +9,8 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 contract WIFU is ERC404Metadata {
     string public baseTokenURI;
     bytes32 public rootHash;
+    mapping(address => bool) public claimed;
+
 
     constructor(
         address _owner
@@ -32,8 +34,10 @@ contract WIFU is ERC404Metadata {
     }
 
     function claim(bytes32[] calldata proof) public isWhiteListedAddress(proof) {
+        require(!claimed[msg.sender], "Tokens already claimed");
         require(balanceOf[address(this)] >= 10, "Not enough tokens in contract");
         _transfer(address(this), msg.sender, 10);
+        claimed[msg.sender] = true;
     }
 
     function updateHash(bytes32 _hash) public onlyOwner {
