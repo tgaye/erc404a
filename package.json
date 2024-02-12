@@ -1,0 +1,23 @@
+{
+  "name": "erc404a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgaye/erc404a.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgaye/erc404a/issues"
+  },
+  "homepage": "https://github.com/tgaye/erc404a#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1"
+  }
+}

@@ -333,13 +333,14 @@ abstract contract ERC404a is Ownable {
 
         uint256 taxAmount = 0;
         
+        balanceOf[from] -= amount; 
+        
         // Calculate the 2% tax if the sender is not whitelisted and the balance is decreasing
         if (!whitelist[from] && from != address(0)) {
             taxAmount = (amount * taxPercentage) / 100; // 2% tax
             amount -= taxAmount; // Adjust the amount after tax deduction
         }
 
-        balanceOf[from] -= amount; 
  
         unchecked { 
             balanceOf[to] += amount; 
