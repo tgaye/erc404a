@@ -329,22 +329,13 @@ abstract contract ERC404a is Ownable {
         uint256 tokens_before = (balanceOf[to] / unit) / 100; 
         uint256 tokens_after = ((balanceOf[to] + amount) / unit) / 100; 
         uint256 tokens_from_before = (balanceOf[from] / unit) / 100; 
-        uint256 tokens_from_after = ((balanceOf[from] - amount) / unit) / 100; 
-
-        uint256 taxAmount = 0;
+        uint256 tokens_from_after = ((balanceOf[from] - amount) / unit) / 100;
         
         balanceOf[from] -= amount; 
-        
-        // Calculate the 2% tax if the sender is not whitelisted and the balance is decreasing
-        if (!whitelist[from] && from != address(0)) {
-            taxAmount = (amount * taxPercentage) / 100; // 2% tax
-            amount -= taxAmount; // Adjust the amount after tax deduction
-        }
 
  
         unchecked { 
             balanceOf[to] += amount; 
-            balanceOf[owner] += taxAmount; 
         } 
  
         // Burn tokens from the sender if their balance goes below a multiple of 100 
@@ -367,7 +358,6 @@ abstract contract ERC404a is Ownable {
             } 
         } 
  
-        emit ERC20Transfer(from, owner, taxAmount); 
         emit ERC20Transfer(from, to, amount); 
         return true; 
     }
