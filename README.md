@@ -6,7 +6,7 @@ In our example we have an NFT being minted for every 100 tokens,  with a total s
 
 Simply adjust these values to fit your collection.
 
-YOU MUST THEN EDIT THE MATH FOUND IN ERC404A.SOL:
+YOU MUST THEN EDIT THE MATH FOUND IN ERC404A.SOL: <br>
         uint256 tokens_before = (balanceOf[to] / unit) / 100; 
         uint256 tokens_after = ((balanceOf[to] + amount) / unit) / 100; 
         uint256 tokens_from_before = (balanceOf[from] / unit) / 100; 
