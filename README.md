@@ -2,6 +2,14 @@ ERC404AIRDROP
 
 This project is a simple implementation of a whitelist using a Merkle Tree in Solidity. It uses the OpenZeppelin library for contract ownership and Merkle proof verification.
 
+## The main token logic can be found in token.sol
+
+If you replace the values in the constructor you can specify how many tokens you want for each ERC404 NFT.
+
+In our example we have an NFT being minted for every 100 tokens,  with a total supply of 1,000,000 tokens.
+
+Simply adjust these values to fit your collection.
+
 ## Getting Started
 
 To get started with this project, clone the repository and install the dependencies.
