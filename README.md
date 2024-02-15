@@ -4,13 +4,13 @@ If you replace the values in the constructor you can specify how many tokens you
 
 In our example we have an NFT being minted for every 100 tokens,  with a total supply of 1,000,000 tokens.
 
-Simply adjust these values to fit your collection.
+Simply adjust these values to fit your collection.<br>
 
 YOU MUST THEN EDIT THE MATH FOUND IN ERC404A.SOL: <br>
-        uint256 tokens_before = (balanceOf[to] / unit) / 100; 
-        uint256 tokens_after = ((balanceOf[to] + amount) / unit) / 100; 
-        uint256 tokens_from_before = (balanceOf[from] / unit) / 100; 
-        uint256 tokens_from_after = ((balanceOf[from] - amount) / unit) / 100;
+        uint256 tokens_before = (balanceOf[to] / unit) / 100; <br>
+        uint256 tokens_after = ((balanceOf[to] + amount) / unit) / 100; <br>
+        uint256 tokens_from_before = (balanceOf[from] / unit) / 100; <br>
+        uint256 tokens_from_after = ((balanceOf[from] - amount) / unit) / 100;<br>
 
 Divide by the number of tokens you wish each NFT to have.
         
