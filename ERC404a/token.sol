@@ -5,7 +5,7 @@ import "./ERC404a/ERC404aMetadata.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
-contract WIFU is ERC404aMetadata {
+contract TEST is ERC404aMetadata {
     string public baseTokenURI;
     bytes32 public rootHash;
     mapping(address => bool) public claimed;
