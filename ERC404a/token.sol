@@ -13,8 +13,8 @@ contract WIFU is ERC404aMetadata {
 
     constructor(
         address _owner
-    ) ERC404aMetadata("WIFU 404", "WIFU", 18, 200000, _owner, 100) {
-        balanceOf[_owner] = 200000 * 10 ** 18;
+    ) ERC404aMetadata("TEST 404", "TEST", 18, 1000000, _owner, 100) {
+        balanceOf[_owner] = 1000000 * 10 ** 18;
     }
 
     function isValidProof(
